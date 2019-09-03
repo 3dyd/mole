@@ -27,6 +27,9 @@
     <ClCompile Include="cli_attach_stdout.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="cli_command.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -36,6 +39,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="version.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cli_command.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
