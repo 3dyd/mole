@@ -7,12 +7,12 @@ namespace cli {
 
 class AttachStdout: public Command {
 public:
-  AttachStdout(): Command("attach_stdout", {TOKEN}) {}
+  AttachStdout(): Command("attach_stdout", 1) {}
 
-  void Run(const std::vector<std::string>& args) override {
+  void Run() override {
     DWORD process_id = ATTACH_PARENT_PROCESS;
-    if ("parent" != args.front()) {
-      process_id = std::stoi(args.front());
+    if (auto arg = NextArg(); "parent" != arg) {
+      process_id = std::stoi(arg);
     }
 
     s_stdout.reset();

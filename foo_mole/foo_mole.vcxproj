@@ -61,7 +61,7 @@
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <AdditionalOptions>/Zc:threadSafeInit- /std:c++latest %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalIncludeDirectories>./</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../../shared/boost</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <AdditionalDependencies>..\foobar2000\shared\shared.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -82,7 +82,7 @@
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <EnableEnhancedInstructionSet>NoExtensions</EnableEnhancedInstructionSet>
       <AdditionalOptions>/Zc:threadSafeInit- /std:c++latest %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalIncludeDirectories>./</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../../shared/boost</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <AdditionalDependencies>..\foobar2000\shared\shared.lib;%(AdditionalDependencies)</AdditionalDependencies>

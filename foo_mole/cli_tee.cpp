@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "cli_command.h"
+#include <atomic>
 #include <iostream>
+#include <string_view>
 
 class ConsoleMirror: public console_receiver {
 public:
@@ -28,21 +30,18 @@ namespace cli {
 
 class Tee: public Command {
 public:
-  Tee(): Command("tee", {TOKEN, TOKEN}) {}
+  Tee(): Command("tee", 2) {}
 
-  void Run(const std::vector<std::string>& args) override {
-    if ("console" != args[0]) {
-      throw InvalidArg(0, "allowed only 'console' but given '" + args[0] + "'");
+  void Run() override {
+    if ("console" != NextArg()) {
+      throw InvalidValue("allowed only 'console' token");
     }
-    if ("stdout" != args[1]) {
-      throw InvalidArg(1, "allowed only 'stdout' but given '" + args[1] + "'");
+    if ("stdout" != NextArg()) {
+      throw InvalidValue("allowed only 'stdout' token");
     }
 
     g_console_mirror.get_static_instance().MirrorToStdout();
   }
-
-private:
-  std::vector<std::string> args_;
 };
 
 static commandline_handler_factory_t<Tee> g_tee;
