@@ -21,10 +21,10 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="cli_attach_console.cpp">
+    <ClCompile Include="cli_tee.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="cli_tee.cpp">
+    <ClCompile Include="cli_attach_stdout.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

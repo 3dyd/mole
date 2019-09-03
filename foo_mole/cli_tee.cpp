@@ -58,4 +58,4 @@ private:
   std::vector<std::string> args_;
 };
 
-static service_factory_single_t<cli_tee> g_cli_tee;
+static commandline_handler_factory_t<cli_tee> g_cli_tee;

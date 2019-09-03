@@ -98,7 +98,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="cli_attach_console.cpp" />
+    <ClCompile Include="cli_attach_stdout.cpp" />
     <ClCompile Include="cli_tee.cpp" />
     <ClCompile Include="foo_mole.cpp" />
     <ClCompile Include="stdafx.cpp">
