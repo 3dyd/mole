@@ -18,7 +18,7 @@ public:
 
   Command(const char* name, std::vector<ArgType> arg_types);
 
-  virtual void run(const std::vector<std::string>& args) = 0;
+  virtual void Run(const std::vector<std::string>& args) = 0;
 
 private:
   result on_token(const char* token) final;

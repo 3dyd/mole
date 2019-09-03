@@ -9,19 +9,25 @@ class AttachStdout: public Command {
 public:
   AttachStdout(): Command("attach_stdout", {TOKEN}) {}
 
-  void run(const std::vector<std::string>& args) override {
+  void Run(const std::vector<std::string>& args) override {
     DWORD process_id = ATTACH_PARENT_PROCESS;
     if ("parent" != args.front()) {
       process_id = std::stoi(args.front());
     }
 
+    s_stdout.reset();
     FreeConsole();
 
     if (!AttachConsole(process_id)) {
       throw exception_win32(GetLastError());
     }
 
-    freopen("CON", "w", stdout);
+    FILE* reopened;
+    if (0 != freopen_s(&reopened, "CON", "w", stdout)) {
+      auto code = errno;
+      throw std::runtime_error("freopen failed (errno=" + std::to_string(code) + ")");
+    }
+    s_stdout.reset(reopened, fclose);
 
     if (ATTACH_PARENT_PROCESS == process_id) {
       mlog << "attached stdout to console of the parent process";
@@ -30,7 +36,12 @@ public:
       mlog << "attached stdout to console of process with pid=" << process_id;
     }
   }
+
+private:
+  static std::shared_ptr<FILE> s_stdout; // it is accessed only in main thread
 };
+
+std::shared_ptr<FILE> AttachStdout::s_stdout;
 
 static commandline_handler_factory_t<AttachStdout> g_attach_stdout;
 

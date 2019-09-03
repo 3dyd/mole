@@ -46,7 +46,7 @@ void Command::on_files_done() {
   }
 
   try {
-    run(args_);
+    Run(args_);
   }
   catch (const InvalidArg& e) {
     mlog << "invalid arg #" << (e.zero_based_index_ + 1) << " for command /" << name_ << ": " << e.what();

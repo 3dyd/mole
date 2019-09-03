@@ -30,7 +30,7 @@ class Tee: public Command {
 public:
   Tee(): Command("tee", {TOKEN, TOKEN}) {}
 
-  void run(const std::vector<std::string>& args) override {
+  void Run(const std::vector<std::string>& args) override {
     if ("console" != args[0]) {
       throw InvalidArg(0, "allowed only 'console' but given '" + args[0] + "'");
     }
