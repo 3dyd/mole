@@ -1,12 +1,15 @@
 [submodule "foobar2000"]
 	path = foobar2000
 	url = https://github.com/reupen/foobar2000-sdk.git
+	ignore = dirty
 [submodule "columns_ui-sdk"]
 	path = columns_ui-sdk
 	url = https://github.com/reupen/columns_ui-sdk
+	ignore = dirty
 [submodule "pfc"]
 	path = pfc
 	url = https://github.com/reupen/pfc.git
+	ignore = dirty
 [submodule "wtl"]
 	path = wtl
 	url = https://git.code.sf.net/p/wtl/git
