@@ -1,25 +1,25 @@
 #include "stdafx.h"
 #include "cli_command.h"
+#include <iostream>
 
 class ConsoleMirror: public console_receiver {
 public:
   void MirrorToStdout() {
-    core_api::ensure_main_thread();
     stdout_ = true;
   }
 
 private:
-  void print(const char* message, t_size message_length) override {
-    // Better slower than messing in console by simultaneous writing
-    fb2k::inMainThread2([this, text = pfc::string8(message, message_length)]() {
-      if (stdout_) {
-        puts(text.c_str());
+  void print(const char* message, t_size length) override {
+    if (stdout_) {
+      if (~0 == length) {
+        length = strlen(message);
       }
-    });
+      std::cout << std::string_view(message, length) << std::endl;
+    }
   }
 
 private:
-  bool stdout_ = false;
+  std::atomic_bool stdout_ = false;
 };
 
 static service_factory_single_t<ConsoleMirror> g_console_mirror;
