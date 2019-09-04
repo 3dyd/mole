@@ -30,6 +30,9 @@
     <ClCompile Include="cli_command.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="cli_defer_for.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
