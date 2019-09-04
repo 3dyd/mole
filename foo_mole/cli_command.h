@@ -2,10 +2,6 @@
 
 namespace cli {
 
-struct InvalidValue: std::logic_error {
-  using logic_error::logic_error;
-};
-
 class Command: public commandline_handler {
 public:
   Command(const char* name, size_t arg_count);
@@ -14,15 +10,17 @@ public:
 
 protected:
   const std::string& NextArg();
+  void ArgsProcessed();
 
 private:
   result on_token(const char* token) final;
+  std::string UnprocessedArgsError() const;
 
 private:
   pfc::string8 name_;
   size_t arg_count_ = 0;
   std::deque<std::string> args_;
-  std::string next_arg_;
+  std::optional<std::string> next_arg_;
 };
 
 } // namespace cli

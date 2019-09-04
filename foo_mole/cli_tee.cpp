@@ -34,11 +34,12 @@ public:
 
   void Run() override {
     if ("console" != NextArg()) {
-      throw InvalidValue("allowed only 'console' token");
+      throw std::logic_error("allowed only 'console' token");
     }
     if ("stdout" != NextArg()) {
-      throw InvalidValue("allowed only 'stdout' token");
+      throw std::logic_error("allowed only 'stdout' token");
     }
+    ArgsProcessed();
 
     g_console_mirror.get_static_instance().MirrorToStdout();
   }

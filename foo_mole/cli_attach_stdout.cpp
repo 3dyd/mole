@@ -14,6 +14,7 @@ public:
     if (auto arg = NextArg(); "parent" != arg) {
       process_id = std::stoi(arg);
     }
+    ArgsProcessed();
 
     s_stdout.reset();
     FreeConsole();
