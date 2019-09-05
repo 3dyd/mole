@@ -1,6 +1,5 @@
 #include "stdafx.h"
 #include "cli_command.h"
-#include <atomic>
 #include <iostream>
 #include <string_view>
 
@@ -34,10 +33,10 @@ public:
 
   void Run() override {
     if ("console" != NextArg()) {
-      throw std::logic_error("allowed only 'console' token");
+      throw std::invalid_argument("allowed only 'console' token");
     }
     if ("stdout" != NextArg()) {
-      throw std::logic_error("allowed only 'stdout' token");
+      throw std::invalid_argument("allowed only 'stdout' token");
     }
     ArgsProcessed();
 

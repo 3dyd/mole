@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "event.h"
+#include "printer.h"
 
 // {569EA512-B78F-41FB-8CB8-D60DF0F4C085}
 static const GUID guid_context_menu_group =
@@ -63,7 +64,7 @@ private:
       }
     }
 
-    console::print(dump);
+    Printer::Get().Print(dump);
   }
 };
 

@@ -101,6 +101,7 @@
     <ClCompile Include="cli_attach_stdout.cpp" />
     <ClCompile Include="cli_command.cpp" />
     <ClCompile Include="cli_defer_for.cpp" />
+    <ClCompile Include="cli_print_to.cpp" />
     <ClCompile Include="cli_run_on.cpp" />
     <ClCompile Include="cli_tee.cpp" />
     <ClCompile Include="context_menu.cpp" />
@@ -114,6 +115,7 @@
     <ClCompile Include="event_playlist_callback.cpp" />
     <ClCompile Include="event_play_callback.cpp" />
     <ClCompile Include="foo_mole.cpp" />
+    <ClCompile Include="printer.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
@@ -122,6 +124,7 @@
   <ItemGroup>
     <ClInclude Include="cli_command.h" />
     <ClInclude Include="event.h" />
+    <ClInclude Include="printer.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="version.h" />
