@@ -109,6 +109,7 @@
     <ClCompile Include="event_initquit.cpp" />
     <ClCompile Include="event_library_callback.cpp" />
     <ClCompile Include="event_metadb_io_callback.cpp" />
+    <ClCompile Include="event_metadb_io_edit_callback.cpp" />
     <ClCompile Include="event_playlist_callback.cpp" />
     <ClCompile Include="event_play_callback.cpp" />
     <ClCompile Include="foo_mole.cpp" />
