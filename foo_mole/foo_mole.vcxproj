@@ -103,6 +103,7 @@
     <ClCompile Include="cli_defer_for.cpp" />
     <ClCompile Include="cli_run_on.cpp" />
     <ClCompile Include="cli_tee.cpp" />
+    <ClCompile Include="context_menu.cpp" />
     <ClCompile Include="event.cpp" />
     <ClCompile Include="event_config_io_callback.cpp" />
     <ClCompile Include="event_file_operation_callback.cpp" />
