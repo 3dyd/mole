@@ -3,6 +3,7 @@
 #include <sdkddkver.h>
 #include "../foobar2000/SDK/foobar2000.h"
 #include <deque>
+#include <map>
 #include <optional>
 #include "version.h"
 

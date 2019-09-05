@@ -33,6 +33,12 @@
     <ClCompile Include="cli_defer_for.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="cli_run_on.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="event.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -45,6 +51,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="cli_command.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="event.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

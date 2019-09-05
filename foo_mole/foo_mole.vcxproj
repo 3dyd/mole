@@ -101,7 +101,9 @@
     <ClCompile Include="cli_attach_stdout.cpp" />
     <ClCompile Include="cli_command.cpp" />
     <ClCompile Include="cli_defer_for.cpp" />
+    <ClCompile Include="cli_run_on.cpp" />
     <ClCompile Include="cli_tee.cpp" />
+    <ClCompile Include="event.cpp" />
     <ClCompile Include="foo_mole.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -110,6 +112,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cli_command.h" />
+    <ClInclude Include="event.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="version.h" />
