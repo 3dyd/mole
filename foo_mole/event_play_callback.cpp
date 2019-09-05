@@ -22,17 +22,7 @@ class PlayCallbackBridge: public play_callback_static, public Bridge {
 
 static service_factory_single_t<PlayCallbackBridge> g_play_callback_bridge;
 
-class PlayCallback: public Group {
-public:
-  const char* GetName() override {
-    return "play_callback";
-  }
-
-  void Schedule(const char* event, const char* commands) override {
-    g_play_callback_bridge.get_static_instance().Schedule(event, commands);
-  }
-};
-
-static service_factory_single_t<PlayCallback> g_play_callback;
+static service_factory_single_t<GroupFromBridge> g_play_callback(
+  "play_callback", g_play_callback_bridge.get_static_instance());
 
 } // namespace event

@@ -28,4 +28,21 @@ private:
 #define BRIDGE_EVENT(name, ...) \
   void name(__VA_ARGS__) override { OnEvent(#name); }
 
+class GroupFromBridge: public Group {
+public:
+  GroupFromBridge(const char* name, Bridge& bridge): name_(name), bridge_(bridge) {}
+
+  const char* GetName() override {
+    return name_.c_str();
+  }
+
+  void Schedule(const char* event, const char* commands) override {
+    return bridge_.Schedule(event, commands);
+  }
+
+private:
+  std::string name_;
+  Bridge& bridge_;
+};
+
 } // namespace event

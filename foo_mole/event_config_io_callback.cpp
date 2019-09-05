@@ -14,17 +14,7 @@ class ConfigIoCallbackBridge: public config_io_callback_v3, public Bridge {
 
 static service_factory_single_t<ConfigIoCallbackBridge> g_config_io_callback_bridge;
 
-class ConfigIoCallback: public Group {
-public:
-  const char* GetName() override {
-    return "config_io_callback";
-  }
-
-  void Schedule(const char* event, const char* commands) override {
-    g_config_io_callback_bridge.get_static_instance().Schedule(event, commands);
-  }
-};
-
-static service_factory_single_t<ConfigIoCallback> g_config_io_callback;
+static service_factory_single_t<GroupFromBridge> g_config_io_callback(
+  "config_io_callback", g_config_io_callback_bridge.get_static_instance());
 
 } // namespace event
