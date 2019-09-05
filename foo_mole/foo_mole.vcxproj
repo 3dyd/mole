@@ -104,6 +104,7 @@
     <ClCompile Include="cli_run_on.cpp" />
     <ClCompile Include="cli_tee.cpp" />
     <ClCompile Include="event.cpp" />
+    <ClCompile Include="event_playlist_callback.cpp" />
     <ClCompile Include="event_play_callback.cpp" />
     <ClCompile Include="foo_mole.cpp" />
     <ClCompile Include="stdafx.cpp">

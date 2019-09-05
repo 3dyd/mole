@@ -22,7 +22,7 @@ class PlayCallbackBridge: public play_callback_static, public Bridge {
 
 static service_factory_single_t<PlayCallbackBridge> g_play_callback_bridge;
 
-class Playback: public Group {
+class PlayCallback: public Group {
 public:
   const char* GetName() override {
     return "play_callback";
@@ -33,6 +33,6 @@ public:
   }
 };
 
-static service_factory_single_t<Playback> g_playback;
+static service_factory_single_t<PlayCallback> g_play_callback;
 
 } // namespace event

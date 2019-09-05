@@ -42,6 +42,9 @@
     <ClCompile Include="event_play_callback.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="event_playlist_callback.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
