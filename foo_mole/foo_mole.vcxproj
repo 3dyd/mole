@@ -107,6 +107,7 @@
     <ClCompile Include="event_config_io_callback.cpp" />
     <ClCompile Include="event_file_operation_callback.cpp" />
     <ClCompile Include="event_initquit.cpp" />
+    <ClCompile Include="event_library_callback.cpp" />
     <ClCompile Include="event_playlist_callback.cpp" />
     <ClCompile Include="event_play_callback.cpp" />
     <ClCompile Include="foo_mole.cpp" />
