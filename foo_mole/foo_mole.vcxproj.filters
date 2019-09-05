@@ -39,7 +39,7 @@
     <ClCompile Include="event.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="event_playback.cpp">
+    <ClCompile Include="event_play_callback.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

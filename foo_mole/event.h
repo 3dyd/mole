@@ -25,4 +25,7 @@ private:
   std::map<std::string, Commands> schedule_;
 };
 
+#define BRIDGE_EVENT(name, ...) \
+  void name(__VA_ARGS__) override { OnEvent(#name); }
+
 } // namespace event
