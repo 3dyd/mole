@@ -20,6 +20,9 @@ public:
     else if ("stdout" == destination) {
       Printer::Get().SetDestination(Printer::Destination::Stdout);
     }
+    else if (0 == strncmp(destination.c_str(), "file=", 5)) {
+      Printer::Get().SetDestination(Printer::Destination::File, &destination[5]);
+    }
     else {
       throw std::invalid_argument("invalid destination given");
     }

@@ -5,6 +5,7 @@
 #include <atomic>
 #include <deque>
 #include <map>
+#include <mutex>
 #include <optional>
 #include "version.h"
 
