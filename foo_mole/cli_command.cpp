@@ -31,11 +31,11 @@ const std::string& Command::NextArg() {
 commandline_handler::result Command::on_token(const char* token) {
   core_api::ensure_main_thread();
 
-  if (0 != pfc::strcmp_partial(token, name_.c_str()) || ':' != token[name_.get_length()]) {
+  if (0 != pfc::strcmp_partial(token, name_.c_str()) || '/' != token[name_.get_length()]) {
     return RESULT_NOT_OURS;
   }
 
-  boost::split(args_, std::string(token), [](char ch) { return ':' == ch; });
+  boost::split(args_, std::string(token + 1), [](char ch) { return '/' == ch; });
   args_.pop_front();
 
   if (args_.size() != arg_count_) {
