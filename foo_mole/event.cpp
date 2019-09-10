@@ -39,6 +39,14 @@ void Schedule(const char* spec, const char* commands) {
   throw pfc::exception_not_implemented(std::string("no such event: ").append(group).c_str());
 }
 
+GroupImpl::GroupImpl(const char* name, EventNames supported_events)
+  : name_(name), supported_events_(std::move(supported_events)) {
+}
+
+const char* GroupImpl::GetName() {
+  return name_.c_str();
+}
+
 void GroupImpl::OnEvent(const char* event) {
   if (auto it = schedule_.find(event); schedule_.end() != it) {
     Commands commands({std::move(it->second)});
@@ -51,7 +59,12 @@ void GroupImpl::OnEvent(const char* event) {
 }
 
 void GroupImpl::Schedule(const char* event, const char* commands) {
-  schedule_[event].push_back(commands);
+  if (supported_events_.end() == find(supported_events_.begin(), supported_events_.end(), event)) {
+    mlog << "invalid event: " << name_.c_str() << ":" << event;
+  }
+  else {
+    schedule_[event].push_back(commands);
+  }
 }
 
 } // namespace event

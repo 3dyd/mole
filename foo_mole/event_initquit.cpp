@@ -11,6 +11,7 @@ public:
   BRIDGE_EVENT(on_quit);
 };
 
-static service_factory_single_t<BridgedGroup<InitquitBridge>> g_initquit("initquit");
+static service_factory_single_t<BridgedGroup<InitquitBridge>> g_initquit(
+  "initquit", EventNames{"on_init", "on_quit"});
 
 } // namespace event

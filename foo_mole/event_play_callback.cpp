@@ -23,6 +23,9 @@ public:
   BRIDGE_EVENT(on_volume_change, float);
 };
 
-static service_factory_single_t<BridgedGroup<PlayCallbackBridge>> g_play_callback("play_callback");
+static service_factory_single_t<BridgedGroup<PlayCallbackBridge>> g_play_callback("play_callback",
+  EventNames{"on_playback_starting", "on_playback_new_track", "on_playback_stop", "on_playback_seek",
+             "on_playback_pause", "on_playback_edited", "on_playback_dynamic_info",
+             "on_playback_dynamic_info_track", "on_playback_time", "on_volume_change"});
 
 } // namespace event
