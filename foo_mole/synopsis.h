@@ -19,8 +19,13 @@ class CommandSynopsis: public Synopsis {
 public:
   CommandSynopsis(const char* synopsis): synopsis_(synopsis) {}
 
-  const char* GetSection() override { return "Commands:"; }
-  std::string GetInfo() override { return synopsis_; }
+  const char* GetSection() override {
+    return "Command format: /<command_name>[/<arg>...]\nCommands:\n";
+  }
+
+  std::string GetInfo() override {
+    return synopsis_;
+  }
 
 private:
   std::string synopsis_;

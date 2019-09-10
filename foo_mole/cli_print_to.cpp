@@ -33,6 +33,6 @@ public:
 
 static commandline_handler_factory_t<PrintTo> g_print_to;
 static CommandSynopsis g_print_to_synopsis(
-  "/print_to/console|popup|stdout|file=<path>\tuse given destination in commands that support it");
+  "/print_to/console|popup|stdout|file=<path>\n\tuse given destination in commands that support it");
 
 } // namespace cli

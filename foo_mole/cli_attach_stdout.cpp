@@ -46,6 +46,6 @@ std::shared_ptr<FILE> AttachStdout::s_stdout;
 
 static commandline_handler_factory_t<AttachStdout> g_attach_stdout;
 static CommandSynopsis g_attach_stdout_synopsis(
-  "/attach_stdout/<pid>|parent\tattach foobar2000 stdout to console of process with given id or parent process");
+  "/attach_stdout/<pid>|parent\n\tattach foobar2000 stdout to console of given process");
 
 } // namespace cli

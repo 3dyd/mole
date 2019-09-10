@@ -29,6 +29,6 @@ public:
 
 static commandline_handler_factory_t<DeferFor> g_defer_for;
 static CommandSynopsis g_defer_for_synopsis(
-  "/defer_for/<seconds>/<command_line_base64>\trun foobar2000.exe with given command line after given number of seconds");
+  "/defer_for/<seconds>/<command_line_base64>\n\trun foobar2000.exe with given args after given number of seconds");
 
 } // namespace cli

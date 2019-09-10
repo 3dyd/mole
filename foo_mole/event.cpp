@@ -60,7 +60,7 @@ const char* GroupImpl::GetName() {
 }
 
 const char* GroupImpl::GetSection() {
-  return "Events:";
+  return "Events (usage example: /run_on/play_callback.on_playback_stop/<cmd>):\n";
 }
 
 void GroupImpl::OnEvent(const char* event) {
