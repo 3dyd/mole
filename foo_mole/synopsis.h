@@ -20,7 +20,7 @@ public:
   CommandSynopsis(const char* synopsis): synopsis_(synopsis) {}
 
   const char* GetSection() override {
-    return "Command format: /<command_name>[/<arg>...]\nCommands:\n";
+    return "Command format: /<command_name>[/<arg>...]\nCommands:";
   }
 
   std::string GetInfo() override {

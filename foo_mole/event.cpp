@@ -46,10 +46,10 @@ GroupImpl::GroupImpl(const char* name, EventNames supported_events)
 
 std::string GroupImpl::GetInfo() {
   std::ostringstream os;
-  os << name_ << '\n';
+  os << name_;
 
   for (const auto& event : supported_events_) {
-    os << '\t' << event << '\n';
+    os << "\n\t" << event;
   }
 
   return os.str();
@@ -60,7 +60,7 @@ const char* GroupImpl::GetName() {
 }
 
 const char* GroupImpl::GetSection() {
-  return "Events (usage example: /run_on/play_callback.on_playback_stop/<cmd>):\n";
+  return "Events (usage example: /run_on/play_callback.on_playback_stop/<cmd>):";
 }
 
 void GroupImpl::OnEvent(const char* event) {

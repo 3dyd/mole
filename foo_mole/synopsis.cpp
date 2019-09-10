@@ -56,12 +56,15 @@ Synopsis::~Synopsis() {
 std::string Synopsis::Collect() {
   std::map<std::string, std::string> all;
   for (Synopsis* ptr = s_list; !!ptr; ptr = ptr->next_) {
-    all[ptr->GetSection()].append(ptr->GetInfo()).append("\n");
+    all[ptr->GetSection()].append("\n\n").append(ptr->GetInfo());
   }
 
   std::string text;
   for (const auto& section : all) {
-    text.append(section.first).append("\n").append(section.second).append("\n");
+    if (!text.empty()) {
+      text.append("\n\n").append(75, '-').append("\n\n");
+    }
+    text.append(section.first).append(section.second);
   }
 
   return text;
