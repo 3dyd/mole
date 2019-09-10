@@ -13,36 +13,35 @@ public:
   FB2K_MAKE_SERVICE_INTERFACE_ENTRYPOINT(Group);
 };
 
-class Bridge {
+class GroupImpl: public Group {
 public:
-  void Schedule(const char* event, const char* commands);
+  GroupImpl(const char* name): name_(name) {}
 
-protected:
+  const char* GetName() override { return name_.c_str(); }
+  void Schedule(const char* event, const char* commands) override;
   void OnEvent(const char* event);
 
 private:
+  std::string name_;
   using Commands = std::vector<std::string>;
   std::map<std::string, Commands> schedule_;
 };
 
+struct Bridge {
+  Bridge(GroupImpl& parent): parent_(parent) {}
+  GroupImpl& parent_;
+};
+
 #define BRIDGE_EVENT(name, ...) \
-  void name(__VA_ARGS__) override { OnEvent(#name); }
+  void name(__VA_ARGS__) override { parent_.OnEvent(#name); }
 
-class GroupFromBridge: public Group {
+template <class T>
+class BridgedGroup: public GroupImpl {
 public:
-  GroupFromBridge(const char* name, Bridge& bridge): name_(name), bridge_(bridge) {}
-
-  const char* GetName() override {
-    return name_.c_str();
-  }
-
-  void Schedule(const char* event, const char* commands) override {
-    return bridge_.Schedule(event, commands);
-  }
+  BridgedGroup(const char* name): GroupImpl(name), bridge_(*this) {}
 
 private:
-  std::string name_;
-  Bridge& bridge_;
+  service_factory_single_t<T> bridge_;
 };
 
 } // namespace event

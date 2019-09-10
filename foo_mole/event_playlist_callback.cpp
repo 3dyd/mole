@@ -4,6 +4,9 @@
 namespace event {
 
 class PlaylistCallbackBridge: public playlist_callback_static, public Bridge {
+public:
+  using Bridge::Bridge;
+
   unsigned get_flags() override {
     return flag_all;
   }
@@ -29,9 +32,6 @@ class PlaylistCallbackBridge: public playlist_callback_static, public Bridge {
   BRIDGE_EVENT(on_playlist_locked, t_size, bool);
 };
 
-static service_factory_single_t<PlaylistCallbackBridge> g_playlist_callback_bridge;
-
-static service_factory_single_t<GroupFromBridge> g_playlist_callback(
-  "playlist_callback", g_playlist_callback_bridge.get_static_instance());
+static service_factory_single_t<BridgedGroup<PlaylistCallbackBridge>> g_playlist_callback("playlist_callback");
 
 } // namespace event

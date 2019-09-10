@@ -39,7 +39,7 @@ void Schedule(const char* spec, const char* commands) {
   throw pfc::exception_not_implemented(std::string("no such event: ").append(group).c_str());
 }
 
-void Bridge::OnEvent(const char* event) {
+void GroupImpl::OnEvent(const char* event) {
   if (auto it = schedule_.find(event); schedule_.end() != it) {
     Commands commands({std::move(it->second)});
     schedule_.erase(it);
@@ -50,7 +50,7 @@ void Bridge::OnEvent(const char* event) {
   }
 }
 
-void Bridge::Schedule(const char* event, const char* commands) {
+void GroupImpl::Schedule(const char* event, const char* commands) {
   schedule_[event].push_back(commands);
 }
 

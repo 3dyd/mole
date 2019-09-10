@@ -4,6 +4,9 @@
 namespace event {
 
 class PlayCallbackBridge: public play_callback_static, public Bridge {
+public:
+  using Bridge::Bridge;
+
   unsigned get_flags() override {
     return flag_on_playback_all;
   }
@@ -20,9 +23,6 @@ class PlayCallbackBridge: public play_callback_static, public Bridge {
   BRIDGE_EVENT(on_volume_change, float);
 };
 
-static service_factory_single_t<PlayCallbackBridge> g_play_callback_bridge;
-
-static service_factory_single_t<GroupFromBridge> g_play_callback(
-  "play_callback", g_play_callback_bridge.get_static_instance());
+static service_factory_single_t<BridgedGroup<PlayCallbackBridge>> g_play_callback("play_callback");
 
 } // namespace event
