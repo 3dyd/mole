@@ -15,13 +15,16 @@ public:
 
 using EventNames = std::vector<std::string>;
 
-class GroupImpl: public Group {
+class GroupImpl: public Group, public Synopsis {
 public:
   GroupImpl(const char* name, EventNames supported_events);
 
   const char* GetName() override;
   void Schedule(const char* event, const char* commands) override;
   void OnEvent(const char* event);
+
+  const char* GetSection() override;
+  std::string GetInfo() override;
 
 private:
   std::string name_;

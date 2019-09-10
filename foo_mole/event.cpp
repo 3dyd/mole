@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "event.h"
+#include <sstream>
 
 namespace event {
 
@@ -43,8 +44,23 @@ GroupImpl::GroupImpl(const char* name, EventNames supported_events)
   : name_(name), supported_events_(std::move(supported_events)) {
 }
 
+std::string GroupImpl::GetInfo() {
+  std::ostringstream os;
+  os << name_ << '\n';
+
+  for (const auto& event : supported_events_) {
+    os << '\t' << event << '\n';
+  }
+
+  return os.str();
+}
+
 const char* GroupImpl::GetName() {
   return name_.c_str();
+}
+
+const char* GroupImpl::GetSection() {
+  return "Events:";
 }
 
 void GroupImpl::OnEvent(const char* event) {
