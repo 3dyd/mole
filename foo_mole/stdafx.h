@@ -8,5 +8,6 @@
 #include <mutex>
 #include <optional>
 #include "version.h"
+#include "synopsis.h"
 
 #define mlog  console::formatter() << APP_BINARY << ": "

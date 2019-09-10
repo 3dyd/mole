@@ -45,5 +45,7 @@ public:
 };
 
 static commandline_handler_factory_t<Tee> g_tee;
+static CommandSynopsis g_tee_synopsis(
+  "/tee/console/stdout\tmirror data from first arg to destination specified in second arg");
 
 } // namespace cli

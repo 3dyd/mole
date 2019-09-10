@@ -22,5 +22,7 @@ public:
 };
 
 static commandline_handler_factory_t<RunOn> g_run_on;
+static CommandSynopsis g_run_on_synopsis(
+  "/run_on/<event>/<command_line_base64>\trun foobar2000.exe with given command line on given event");
 
 } // namespace cli

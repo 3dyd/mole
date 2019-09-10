@@ -72,6 +72,9 @@
     <ClCompile Include="cli_print_to.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="synopsis.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -90,6 +93,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="printer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="synopsis.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
