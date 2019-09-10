@@ -22,3 +22,19 @@ private:
   std::mutex mutex_;
   std::function<void(const char*)> printer_;
 };
+
+class PrinterTarget: public Synopsis {
+public:
+  PrinterTarget(const char* target): target_(target) {}
+
+  const char* GetSection() override {
+    return "Printing commands:";
+  }
+
+  std::string GetInfo() override {
+    return target_;
+  }
+
+private:
+  std::string target_;
+};

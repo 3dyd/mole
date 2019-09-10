@@ -69,3 +69,4 @@ private:
 };
 
 static contextmenu_item_factory_t<ContextMenuItems> g_context_menu_items;
+static PrinterTarget g_printer_target_dump("\tcontext menu item '" APP_NAME " > Dump'");
