@@ -118,6 +118,7 @@
     <ClCompile Include="event_playlist_callback.cpp" />
     <ClCompile Include="event_play_callback.cpp" />
     <ClCompile Include="foo_mole.cpp" />
+    <ClCompile Include="main_menu.cpp" />
     <ClCompile Include="printer.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
