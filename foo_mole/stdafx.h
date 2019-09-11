@@ -7,6 +7,10 @@
 #include <map>
 #include <mutex>
 #include <optional>
+#include <atlbase.h>
+#include <atlapp.h>
+#include <atlwin.h>
+#include <atlcrack.h>
 #include "version.h"
 #include "synopsis.h"
 

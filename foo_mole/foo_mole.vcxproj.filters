@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
     </Filter>
+    <Filter Include="SDK Helpers">
+      <UniqueIdentifier>{f361afd1-95f7-4aa9-a164-7dd315c0bb6a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="foo_mole.cpp">
@@ -81,6 +84,12 @@
     <ClCompile Include="main_menu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="services_wnd.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\foobar2000\helpers\window_placement_helper.cpp">
+      <Filter>SDK Helpers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -103,6 +112,12 @@
     </ClInclude>
     <ClInclude Include="synopsis.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="services_wnd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\foobar2000\helpers\window_placement_helper.h">
+      <Filter>SDK Helpers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

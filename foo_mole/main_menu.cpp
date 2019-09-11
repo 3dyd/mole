@@ -1,4 +1,6 @@
 #include "stdafx.h"
+#include "resource.h"
+#include "services_wnd.h"
 #include "synopsis.h"
 
 class MainMenuCommands: public mainmenu_commands {
@@ -18,6 +20,20 @@ private:
   GUID parent_;
   Commands commands_;
 };
+
+// {BD72DF60-FF16-4D4B-BD25-45D53724D24E}
+static const GUID guid_view_menu_group =
+{0xbd72df60, 0xff16, 0x4d4b, {0xbd, 0x25, 0x45, 0xd5, 0x37, 0x24, 0xd2, 0x4e}};
+
+static mainmenu_group_popup_factory g_view_menu_group(guid_view_menu_group,
+  mainmenu_groups::view, mainmenu_commands::sort_priority_dontcare, APP_NAME);
+
+static service_factory_single_t<MainMenuCommands> g_view_menu_commands(
+  guid_view_menu_group, MainMenuCommands::Commands{
+    {"Services", {0x1a8c9733, 0xd8b4, 0x4ef7, {0x84, 0xaa, 0x7f, 0xa2, 0xb5, 0xc7, 0x2d, 0x52}}, [] {
+      ServicesWnd::Show();
+    }}
+  });
 
 static service_factory_single_t<MainMenuCommands> g_help_menu_commands(
   mainmenu_groups::help, MainMenuCommands::Commands{

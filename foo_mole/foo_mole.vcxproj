@@ -61,7 +61,7 @@
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <AdditionalOptions>/Zc:threadSafeInit- /std:c++latest %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\rapidjson\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\rapidjson\include;..\wtl\include</AdditionalIncludeDirectories>
       <TreatWarningAsError>true</TreatWarningAsError>
     </ClCompile>
     <Link>
@@ -83,7 +83,7 @@
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <EnableEnhancedInstructionSet>NoExtensions</EnableEnhancedInstructionSet>
       <AdditionalOptions>/Zc:threadSafeInit- /std:c++latest %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\rapidjson\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\rapidjson\include;..\wtl\include</AdditionalIncludeDirectories>
       <TreatWarningAsError>true</TreatWarningAsError>
     </ClCompile>
     <Link>
@@ -100,6 +100,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\foobar2000\helpers\window_placement_helper.cpp" />
     <ClCompile Include="acfu_source.cpp" />
     <ClCompile Include="cli_attach_stdout.cpp" />
     <ClCompile Include="cli_command.cpp" />
@@ -120,6 +121,7 @@
     <ClCompile Include="foo_mole.cpp" />
     <ClCompile Include="main_menu.cpp" />
     <ClCompile Include="printer.cpp" />
+    <ClCompile Include="services_wnd.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
@@ -127,10 +129,12 @@
     <ClCompile Include="synopsis.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\foobar2000\helpers\window_placement_helper.h" />
     <ClInclude Include="cli_command.h" />
     <ClInclude Include="event.h" />
     <ClInclude Include="printer.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="services_wnd.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="synopsis.h" />
     <ClInclude Include="version.h" />
