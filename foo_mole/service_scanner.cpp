@@ -5,6 +5,19 @@
 
 #define DECLARE_SERVICE(name)  {name::class_guid, #name}
 
+/*
+foobar2000.h:
+- #define FOOBAR2000_TARGET_VERSION 78 // 1.3
++ // #define FOOBAR2000_TARGET_VERSION 78 // 1.3
+  // #define FOOBAR2000_TARGET_VERSION 79 // 1.4
+- // #define FOOBAR2000_TARGET_VERSION 80 // 1.5
++ #define FOOBAR2000_TARGET_VERSION 80 // 1.5
+=====
+component_client.cpp:
+- t_uint32 get_version() {return FOOBAR2000_CLIENT_VERSION;}
++ t_uint32 get_version() {return FOOBAR2000_CLIENT_VERSION_COMPATIBLE;}
+*/
+
 const struct {
   const GUID& guid;
   const char* name;
@@ -43,7 +56,7 @@ const struct {
   DECLARE_SERVICE(input_file_type),
   DECLARE_SERVICE(input_file_type_v2),
   DECLARE_SERVICE(ui_control),
-//  DECLARE_SERVICE(ui_control_v2),
+  DECLARE_SERVICE(ui_control_v2),
   DECLARE_SERVICE(ui_status_text_override),
   DECLARE_SERVICE(ui_drop_item_callback),
   DECLARE_SERVICE(commandline_handler),
@@ -268,8 +281,8 @@ const struct {
   DECLARE_SERVICE(album_art_editor_v2),
   DECLARE_SERVICE(input_manager_v2),
   DECLARE_SERVICE(replaygain_scanner_config),
-//  DECLARE_SERVICE(metadb_io_v4),
-//  DECLARE_SERVICE(popup_message_v3),
+  DECLARE_SERVICE(metadb_io_v4),
+  DECLARE_SERVICE(popup_message_v3),
   DECLARE_SERVICE(file_lowLevelIO),
   DECLARE_SERVICE(async_task_manager),
 };
