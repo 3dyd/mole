@@ -1,8 +1,12 @@
 #include "stdafx.h"
 #include "service_scanner.h"
 #include <algorithm>
-#include "../foobar2000/SDK/component.h"
 #include "../acfu-sdk/acfu.h"
+#include "../columns_ui-sdk/columns_ui.h"
+#include "../columns_ui-sdk/win32_helpers.h"
+#include "../columns_ui-sdk/columns_ui_appearance.h"
+#include "../columns_ui-sdk/ui_extension.h"
+#include "../foobar2000/SDK/component.h"
 
 #define DECLARE_SERVICE(name)  {name::class_guid, #name}
 
@@ -292,6 +296,31 @@ const struct {
   DECLARE_SERVICE(acfu::request),
   DECLARE_SERVICE(acfu::source),
   DECLARE_SERVICE(acfu::updates),
+  // foo_ui_columns
+  DECLARE_SERVICE(cui::fcl::dataset),
+  DECLARE_SERVICE(cui::fcl::dataset_v2),
+  DECLARE_SERVICE(cui::fcl::group),
+  DECLARE_SERVICE(cui::control),
+  DECLARE_SERVICE(cui::colours::manager),
+  DECLARE_SERVICE(cui::colours::manager_instance),
+  DECLARE_SERVICE(cui::fonts::manager),
+  DECLARE_SERVICE(cui::colours::client),
+  DECLARE_SERVICE(cui::fonts::client),
+  DECLARE_SERVICE(uie::window_host),
+  DECLARE_SERVICE(uie::window_host_ex),
+  DECLARE_SERVICE(uie::menu_window),
+  DECLARE_SERVICE(uie::menu_window_v2),
+  DECLARE_SERVICE(uie::window),
+  DECLARE_SERVICE(uie::splitter_window),
+  DECLARE_SERVICE(uie::splitter_window_v2),
+  DECLARE_SERVICE(uie::visualisation),
+  DECLARE_SERVICE(uie::visualisation_host),
+  DECLARE_SERVICE(uie::button),
+  DECLARE_SERVICE(uie::button_v2),
+  DECLARE_SERVICE(uie::custom_button),
+  DECLARE_SERVICE(uie::menu_button),
+  DECLARE_SERVICE(uie::playlist_window),
+  DECLARE_SERVICE(uie::window_host_with_control),
 };
 
 ServiceScanner::ServiceScanner() {
