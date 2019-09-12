@@ -101,6 +101,26 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\foobar2000\helpers\window_placement_helper.cpp" />
+    <ClCompile Include="..\lyric_source-sdk\generic_internet_source_properties.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\lyric_source-sdk\lyric_container_base.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\lyric_source-sdk\lyric_http_request.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\lyric_source-sdk\lyric_source_base.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\lyric_source-sdk\lyric_source_sdk.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
     <ClCompile Include="acfu_source.cpp" />
     <ClCompile Include="cli_attach_stdout.cpp" />
     <ClCompile Include="cli_command.cpp" />
@@ -131,6 +151,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\foobar2000\helpers\window_placement_helper.h" />
+    <ClInclude Include="..\lyric_source-sdk\generic_internet_source_properties.h" />
+    <ClInclude Include="..\lyric_source-sdk\lyric_container_base.h" />
+    <ClInclude Include="..\lyric_source-sdk\lyric_http_request.h" />
+    <ClInclude Include="..\lyric_source-sdk\lyric_source_base.h" />
+    <ClInclude Include="..\lyric_source-sdk\lyric_source_sdk.h" />
     <ClInclude Include="cli_command.h" />
     <ClInclude Include="event.h" />
     <ClInclude Include="printer.h" />

@@ -16,6 +16,9 @@
     <Filter Include="SDK Helpers">
       <UniqueIdentifier>{f361afd1-95f7-4aa9-a164-7dd315c0bb6a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="lyric_source-sdk">
+      <UniqueIdentifier>{21085bff-f18b-40f9-aab1-d1038608125c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="foo_mole.cpp">
@@ -93,6 +96,21 @@
     <ClCompile Include="service_scanner.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\lyric_source-sdk\generic_internet_source_properties.cpp">
+      <Filter>lyric_source-sdk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lyric_source-sdk\lyric_container_base.cpp">
+      <Filter>lyric_source-sdk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lyric_source-sdk\lyric_http_request.cpp">
+      <Filter>lyric_source-sdk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lyric_source-sdk\lyric_source_base.cpp">
+      <Filter>lyric_source-sdk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lyric_source-sdk\lyric_source_sdk.cpp">
+      <Filter>lyric_source-sdk</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -124,6 +142,21 @@
     </ClInclude>
     <ClInclude Include="service_scanner.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lyric_source-sdk\generic_internet_source_properties.h">
+      <Filter>lyric_source-sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lyric_source-sdk\lyric_container_base.h">
+      <Filter>lyric_source-sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lyric_source-sdk\lyric_http_request.h">
+      <Filter>lyric_source-sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lyric_source-sdk\lyric_source_base.h">
+      <Filter>lyric_source-sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lyric_source-sdk\lyric_source_sdk.h">
+      <Filter>lyric_source-sdk</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

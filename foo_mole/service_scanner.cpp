@@ -7,6 +7,7 @@
 #include "../columns_ui-sdk/columns_ui_appearance.h"
 #include "../columns_ui-sdk/ui_extension.h"
 #include "../foobar2000/SDK/component.h"
+#include "../lyric_source-sdk/lyric_source_sdk.h"
 
 #define DECLARE_SERVICE(name)  {name::class_guid, #name}
 
@@ -321,6 +322,12 @@ const struct {
   DECLARE_SERVICE(uie::menu_button),
   DECLARE_SERVICE(uie::playlist_window),
   DECLARE_SERVICE(uie::window_host_with_control),
+  // foo_uie_lyrics3
+  DECLARE_SERVICE(generic_internet_source_properties),
+  DECLARE_SERVICE(lyric_http_request),
+  DECLARE_SERVICE(search_requirements),
+  DECLARE_SERVICE(lyric_source_base),
+  DECLARE_SERVICE(lyric_result_client),
 };
 
 ServiceScanner::ServiceScanner() {
