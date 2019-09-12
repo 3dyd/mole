@@ -84,11 +84,14 @@
     <ClCompile Include="main_menu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="services_wnd.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\foobar2000\helpers\window_placement_helper.cpp">
       <Filter>SDK Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="service_wnd.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="service_scanner.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -113,11 +116,14 @@
     <ClInclude Include="synopsis.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="services_wnd.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\foobar2000\helpers\window_placement_helper.h">
       <Filter>SDK Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="service_wnd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="service_scanner.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

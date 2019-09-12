@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "resource.h"
-#include "services_wnd.h"
+#include "service_wnd.h"
 #include "synopsis.h"
 
 class MainMenuCommands: public mainmenu_commands {
@@ -31,7 +31,7 @@ static mainmenu_group_popup_factory g_view_menu_group(guid_view_menu_group,
 static service_factory_single_t<MainMenuCommands> g_view_menu_commands(
   guid_view_menu_group, MainMenuCommands::Commands{
     {"Services", {0x1a8c9733, 0xd8b4, 0x4ef7, {0x84, 0xaa, 0x7f, 0xa2, 0xb5, 0xc7, 0x2d, 0x52}}, [] {
-      ServicesWnd::Show();
+      ServiceWnd::Show();
     }}
   });
 

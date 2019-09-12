@@ -65,7 +65,7 @@
       <TreatWarningAsError>true</TreatWarningAsError>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>..\foobar2000\shared\shared.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>..\foobar2000\shared\shared.lib;psapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <TargetMachine>MachineX86</TargetMachine>
@@ -87,7 +87,7 @@
       <TreatWarningAsError>true</TreatWarningAsError>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>..\foobar2000\shared\shared.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>..\foobar2000\shared\shared.lib;psapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <OptimizeReferences>true</OptimizeReferences>
@@ -121,7 +121,8 @@
     <ClCompile Include="foo_mole.cpp" />
     <ClCompile Include="main_menu.cpp" />
     <ClCompile Include="printer.cpp" />
-    <ClCompile Include="services_wnd.cpp" />
+    <ClCompile Include="service_scanner.cpp" />
+    <ClCompile Include="service_wnd.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
@@ -134,7 +135,8 @@
     <ClInclude Include="event.h" />
     <ClInclude Include="printer.h" />
     <ClInclude Include="resource.h" />
-    <ClInclude Include="services_wnd.h" />
+    <ClInclude Include="service_scanner.h" />
+    <ClInclude Include="service_wnd.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="synopsis.h" />
     <ClInclude Include="version.h" />
