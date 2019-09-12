@@ -2,6 +2,7 @@
 #include "service_scanner.h"
 #include <algorithm>
 #include "../foobar2000/SDK/component.h"
+#include "../acfu-sdk/acfu.h"
 
 #define DECLARE_SERVICE(name)  {name::class_guid, #name}
 
@@ -22,6 +23,7 @@ const struct {
   const GUID& guid;
   const char* name;
 } KNOWN_SERVICES[] = {
+  // foobar2000
   DECLARE_SERVICE(hasher_md5),
   DECLARE_SERVICE(config_io_callback),
   DECLARE_SERVICE(componentversion),
@@ -285,6 +287,11 @@ const struct {
   DECLARE_SERVICE(popup_message_v3),
   DECLARE_SERVICE(file_lowLevelIO),
   DECLARE_SERVICE(async_task_manager),
+  // foo_acfu
+  DECLARE_SERVICE(acfu::authorization),
+  DECLARE_SERVICE(acfu::request),
+  DECLARE_SERVICE(acfu::source),
+  DECLARE_SERVICE(acfu::updates),
 };
 
 ServiceScanner::ServiceScanner() {
