@@ -32,7 +32,12 @@ public:
   BRIDGE_EVENT(on_playlist_locked, t_size, bool);
 };
 
-static service_factory_single_t<BridgedGroup<PlaylistCallbackBridge>> g_playlist_callback("playlist_callback",
+// {8501D7B9-E4FD-43F4-B62F-505ED67A5C00}
+static const GUID guid_playlist_callback =
+{0x8501d7b9, 0xe4fd, 0x43f4, {0xb6, 0x2f, 0x50, 0x5e, 0xd6, 0x7a, 0x5c, 0x0}};
+
+static service_factory_single_t<BridgedGroup<PlaylistCallbackBridge>> g_playlist_callback(
+  guid_playlist_callback, "playlist_callback",
   EventNames{"on_items_added", "on_items_reordered", "on_items_removing", "on_items_removed", "on_items_selection_change",
              "on_item_focus_change", "on_items_modified", "on_items_modified_fromplayback", "on_items_replaced",
              "on_item_ensure_visible", "on_playlist_activate", "on_playlist_created", "on_playlists_reorder", "on_playlists_removing",
